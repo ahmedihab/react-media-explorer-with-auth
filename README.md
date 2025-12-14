@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# React Media Explorer (TMDB Client)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dynamic media discovery application built with **React**, leveraging the **The Movie Database (TMDB) API** for content and **Firebase** for user authentication and state management.
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+This application provides a comprehensive media browsing experience:
 
-### `npm start`
+* **Firebase Authentication:** Secure user registration, login, and protected routes.
+* **Protected Routing:** Ensures unauthorized users cannot access core content pages (`/movies`, `/tv`).
+* **Real-Time Search:** Instantaneous, multi-media searching (Movies, TV Shows, People) powered by the TMDB API, triggered as the user types.
+* **Media Context Management:** Centralized state management for API functions, replacing the need for Redux.
+* **Detailed Views:** Dedicated pages (`/moviedetails/:id` and `/tvdetails/:id`) to fetch and display specific media information.
+* **Watchlist Feature Ready:** The application architecture is prepared for the integration of the TMDB watchlist functionality.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack & Libraries
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The following key technologies and libraries were used to build this project:
 
-### `npm test`
+| Category | Technology / Library | Purpose |
+| :--- | :--- | :--- |
+| **Frontend Core** | **React** | Core library for building the User Interface. |
+| **Routing** | **React Router DOM** | Handles client-side navigation and routing (e.g., `/search/:query`). |
+| **API Requests** | **Axios** | HTTP client for making Promise-based requests to the TMDB API. |
+| **Data Source** | **TMDB API** | Provides all movie, TV show, and person data. |
+| **State Management** | **React Context API** | Centralized state management via `MediaContext.js`. |
+| **User Auth** | **Firebase (Authentication)** | Handles all user sign-up, sign-in, and session management. |
+| **Styling** | **Bootstrap / Custom CSS** | Responsive styling and layout utility. |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔑 Key Architectural Files and Context Functions
 
-### `npm run build`
+The core logic and data flow are managed through the Context API:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `src/MediaContext.js` Functions
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This file acts as the primary data service, wrapping all necessary TMDB API calls:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Function | Description |
+| :--- | :--- |
+| `getTrending(mediaType, callback)` | Fetches the top trending media items for the home page. |
+| `getMediaDetails(mediaType, id)` | Fetches comprehensive data for a single movie or TV show. |
+| `searchMedia(query)` | **(New Feature)** Fetches real-time multi-search results based on user input. |
+| `toggleWatchlist(...)` | (Placeholder) Function designed to handle adding/removing items from the user's TMDB Watchlist. |
 
-### `npm run eject`
+### Core File Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* **`src/App.js`**: Manages the Firebase user state (`userData`) and defines all primary application routes, including the dynamic `/search/:query` route.
+* **`src/Navbar/Navbar.jsx`**: Implements the real-time search input using `useState`, manages handlers, and uses `useNavigate` for dynamic routing.
+* **`src/SearchResults/SearchResults.jsx`**: Retrieves the search parameter via `useParams()` and executes the `searchMedia` function from `MediaContext`.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## ⚙️ Getting Started
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Prerequisites
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Node.js (LTS version)
+* A TMDB API Key
+* A Firebase Project
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1.  **Clone the Repository:**
+    ```bash
+    git clone [https://github.com/ahmedihab/react-media-explorer-with-auth.git](https://github.com/ahmedihab/react-media-explorer-with-auth.git)
+    cd react-media-explorer-with-auth
+    ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2.  **Install Dependencies:**
+    ```bash
+    npm install
+    ```
 
-### Code Splitting
+3.  **Setup Environment Variables:**
+    Create a file named `.env.local` in the root directory and add your configuration keys:
+    ```
+    REACT_APP_TMDB_API_KEY=YOUR_TMDB_API_KEY_HERE
+    # Include Firebase Config variables (e.g., REACT_APP_FIREBASE_API_KEY, etc.)
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4.  **Run the Application:**
+    ```bash
+    npm start
+    ```
+    The application will open in your browser at `http://localhost:3000`.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
