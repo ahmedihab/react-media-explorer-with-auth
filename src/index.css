@@ -1,13 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+
 body {
+  background-color: #131722;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family:  'Montserrat Alternates', sans-serif !important;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscal 
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.bg-lights{
+  background-color: #24baef !important ;
 }
+.brdr{
+  background-color: #a8a8a83d !important;
+}
+a , a:hover {
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.form-control {
+  background-color: transparent !important;
+  color: #fff !important;
+}
+
+.social-icons {
+    color: #C0392B !important; /* Accent color on hover (Red/Maroon) */
+    transform: translateY(-2px) scale(1.1) !important; /* Subtle lift and scale */
+}
+.fa-search .fab {
+    /* 🔑 Make the cursor a pointer */
+    cursor: pointer; 
+    color: #E0E0E0; 
+    font-size: 1.2rem; 
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* 🔑 Hover effect: Change color and slightly lift/scale the icon */
+.fa-search:hover {
+    color: #C0392B !important; /* Accent color on hover (Red/Maroon) */
+    transform: translateY(-2px) scale(1.1) !important; /* Subtle lift and scale */
+}
+/* --- Footer Icon Design Enhancements --- */
+/* --- Custom Image Placeholder Style --- */
+.placeholder-box {
+    width: 100%;
+    /* Set height to match the approximate aspect ratio of a poster */
+    height: 300px; 
+    background-color: #333333; /* Dark gray background */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #999999;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 10px;
+}
+.placeholder-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #C0392B; /* Use your accent color (Red/Maroon) */
+}
+.placeholder-text {
+    margin: 0;
+    font-weight: 500;
+    /* Hide long names if they overflow */
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap;
+    max-width: 90%;
+}
+
+.footer-icons .fab {
+    /* 🔑 Make the cursor a pointer */
+    cursor: pointer; 
+    color: #E0E0E0; 
+    font-size: 1.2rem; 
+    transition: color 0.2s, transform 0.2s;
+}
+
+/* 🔑 Hover effect: Change color and slightly lift/scale the icon */
+.footer-icons , .fab:hover {
+    color: #C0392B !important; /* Accent color on hover (Red/Maroon) */
+    transform: translateY(-2px) scale(1.1) !important; /* Subtle lift and scale */
+}
+
+/* Optional: Make the footer itself stand out a bit more with a faint border top */
+footer {
+    border-top: 1px solid #2C2C2C; 
+}
+
