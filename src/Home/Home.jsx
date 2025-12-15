@@ -12,12 +12,12 @@ export default function Home({ userData }) {
         // Determine the property name for the poster
         const pathKey = (title === 'People') ? 'profile_path' : 'poster_path';
         
-        // 🔑 HELPER FUNCTION TO GET THE CORRECT ROUTE PATH
+        //HELPER FUNCTION TO GET THE CORRECT ROUTE PATH
         const getDetailsPath = (media) => {
             if (media.media_type === 'movie') {
                 return `/moviedetails/${media.id}`;
             } else if (media.media_type === 'tv') {
-                return `/tvdetails/${media.id}`; // 🔑 FIXED: Use the correct TV details route
+                return `/tvdetails/${media.id}`; // FIXED: Use the correct TV details route
             }
             return '/'; // Fallback for people or other types
         };
@@ -36,7 +36,7 @@ export default function Home({ userData }) {
                         <div className="movie">
                             
                             <Link 
-                                // 🔑 FIXED: Use the new dynamic path helper function
+                                // FIXED: Use the new dynamic path helper function
                                 to={getDetailsPath(media)}
                             >
                                 
