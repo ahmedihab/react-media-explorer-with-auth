@@ -14,7 +14,6 @@ import Moviedetails from './MovieDetalis/Moviedetalis';
 import { MediaContextProvider } from './MediaContext'; 
 import Footer from './Footer/Footer';
 import Tvdetails from './Tvdetails/Tvdetails';
-// 🔑 IMPORT NEW SEARCH RESULTS COMPONENT
 import SearchResults from './SearchResults/SearchResults'; 
 
 
@@ -51,7 +50,7 @@ function App() {
     const navigate = useNavigate();
     
     const [userData, setUserData] = useState(null);
-    // 🔑 NEW: State to track if the initial authentication check is complete
+    //  NEW: State to track if the initial authentication check is complete
     const [isAuthReady, setIsAuthReady] = useState(false); 
 
     // useEffect runs once to set up the authentication observer
@@ -60,7 +59,7 @@ function App() {
         const unsubscribe = onAuthStateChanged(auth, async (user) => {
             if (user) {
                 // User is signed in.
-                setUserData(user);         
+                setUserData(user); 
                 // Get and store the current token
                 const token = await user.getIdToken();
                 localStorage.setItem('userToken', token);
@@ -78,7 +77,7 @@ function App() {
                 console.log("Auth State Changed: User logged out.");
             }
             
-            // 🔑 Mark auth check as complete
+            // Mark auth check as complete
             setIsAuthReady(true);
         });
 
@@ -140,7 +139,7 @@ function App() {
                             </ProtectedRoute>
                         } /> 
                         
-                        {/* 🔑 NEW: SEARCH RESULTS ROUTE */}
+                        {/*  NEW: SEARCH RESULTS ROUTE */}
                         <Route path='search/:query' element={
                             <ProtectedRoute userData={userData}>
                                 <SearchResults userData={userData} /> 
