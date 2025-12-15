@@ -79,7 +79,6 @@ export default function Login() {
             localStorage.setItem('userToken', token);
             
             console.log("Login Successful. Token Saved."); 
-            alert("Login successful!");
             navigate('/home'); 
             
         } catch (error) {
