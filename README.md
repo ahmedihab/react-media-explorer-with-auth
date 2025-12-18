@@ -48,7 +48,7 @@ This file acts as the primary data service, wrapping all necessary TMDB API call
 * **`src/Navbar/Navbar.jsx`**: Implements the real-time search input using `useState`, manages handlers, and uses `useNavigate` for dynamic routing.
 * **`src/SearchResults/SearchResults.jsx`**: Retrieves the search parameter via `useParams()` and executes the `searchMedia` function from `MediaContext`.
 
-## ⚙️ Getting Started
+ ⚙️ Getting Started
 
 ### Prerequisites
 
