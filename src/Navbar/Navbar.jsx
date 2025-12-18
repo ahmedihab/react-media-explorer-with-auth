@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // 🔑 Import useNavigate
+import { Link, useNavigate } from 'react-router-dom'; 
 import { signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig'; 
 
-// 🔑 Accept userData as a prop from App.js
+// Accept userData as a prop from App.js
 export default function Navbar({ userData }) {
     
     const [searchQuery, setSearchQuery] = useState('');
@@ -96,7 +96,7 @@ export default function Navbar({ userData }) {
 
                         <ul className="navbar-nav mb-2 mb-lg-0">
                             
-                            {/* 🔑 UPDATED SEARCH INPUT WITH ICON */}
+                            {/*  UPDATED SEARCH INPUT WITH ICON */}
                             <li className="nav-item d-flex align-items-center me-3">
                                 {/* Wrap in a container to position the icon, assuming search-box is position: relative */}
                                 <div className="search-box position-relative d-flex align-items-center"> 

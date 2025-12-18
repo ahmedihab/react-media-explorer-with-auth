@@ -68,7 +68,7 @@ export default function Register() {
         }
         
         try {
-            // 🛑 Use Firebase createUserWithEmailAndPassword
+            //  Use Firebase createUserWithEmailAndPassword
             await createUserWithEmailAndPassword(
                 auth, 
                 user.email, 
@@ -99,7 +99,7 @@ export default function Register() {
         }
     }
 
-    // 🔑 NEW: Function to navigate back to the login page
+    // NEW: Function to navigate back to the login page
     function goToLogin() {
         navigate('/login'); 
     }
@@ -190,7 +190,7 @@ export default function Register() {
                 </button>
             </form>
 
-            {/* 🔑 ADDED: Navigation Link to Login */}
+            {/* ADDED: Navigation Link to Login */}
             <p className="text-center text-light">
                 Already have an account? 
                 {/* Use an anchor tag and the click handler to navigate */}

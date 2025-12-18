@@ -3,14 +3,14 @@
 import React, { useContext, useState, useEffect, useCallback } from 'react';
 import { MediaContext } from '../MediaContext';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
-import { Link } from 'react-router-dom'; // 🔑 Import Link for navigation
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 // Define constants for image paths (reused from other components)
 const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500';
 const FALLBACK_IMAGE_URL = '/image-not-found.png';
 
 export default function Movies() {
-    // 🔑 Use the useContext hook to access the getMediaList function
+    // Use the useContext hook to access the getMediaList function
     const { getMediaList } = useContext(MediaContext);
     
     const [popularMovies, setPopularMovies] = useState([]);
@@ -19,7 +19,7 @@ export default function Movies() {
     const fetchPopularMovies = useCallback(async () => {
         setIsLoading(true);
         try {
-            // 🔑 Call the context function to fetch the 'popular' movies list, page 1
+            //  Call the context function to fetch the 'popular' movies list, page 1
             const data = await getMediaList('movie', 'popular', 1);
             setPopularMovies(data.results);
         } catch (error) {
@@ -46,7 +46,7 @@ export default function Movies() {
                         popularMovies.map((movie) => (
                             <div className='col-md-2 mb-4' key={movie.id}>
                                 
-                                {/* 🔑 ADDED: Link wrapping the entire media item */}
+                                {/*  ADDED: Link wrapping the entire media item */}
                                 <Link to={`/moviedetails/${movie.id}`} className='text-light text-decoration-none'>
                                     <div className='media-item position-relative'>
                                         <img
